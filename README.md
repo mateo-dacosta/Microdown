@@ -15,14 +15,13 @@ Microdown is now the default markup for the Pillar document compilation chain.
 ## Install
 
 ```Smalltalk
-
 Smalltalk globals
 	at: #BaselineOfMicrodown 
 	ifPresent: [ :c | c removeFromSystem ].
 
 Metacello new
 	baseline: 'Microdown';
-	repository: 'github://pillar-markup/Microdown:v2.9.3/src';
+	repository: 'github://mateo-dacosta/Microdown:dev/src';
 	onConflict: [ :ex | ex useIncoming ];
 	onUpgrade: [ :ex | ex useIncoming ];
 	load: #('All').

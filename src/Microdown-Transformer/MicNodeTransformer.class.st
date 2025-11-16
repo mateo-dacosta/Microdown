@@ -74,6 +74,8 @@ MicNodeTransformer >> replaceChildrenOf: aGroup [
 					replacement push: {child}.
 					self visitAll: child.
 					replacement pop]). 
+		
+
 ]
 
 { #category : 'enumerating' }
@@ -86,6 +88,7 @@ MicNodeTransformer >> replaceCurrentNodeBy: newNodes [
 
 { #category : 'execution' }
 MicNodeTransformer >> visit: anObject [
+
 	super visit: anObject.
 	^ anObject
 ]

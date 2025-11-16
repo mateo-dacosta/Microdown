@@ -24,7 +24,7 @@ this is a paragraph
 ```'.
 	self assert: root children first class equals: MicCodeBlock.
 	transformer visit: root.
-	self assert: root children size equals: 0
+	self assert: root children size equals: 0.
 ]
 
 { #category : 'tests' }
@@ -33,7 +33,11 @@ MicNodeTransformerTest >> testReplaceNodeByAnotherNode [
 	| root |
 	root := Microdown parse: 'this is a paragraph'.
 	self assert: root children first class equals: MicParagraphBlock.
+	self assert: root children first parent equals: root.
+	
 	transformer visit: root.
 	self assert: root children first class equals: MicTextBlock.
-	self assert: root children first bodyString equals: 'test'
+	self assert: root children first bodyString equals: 'test'.
+	self assert: root children first parent equals: root.
+
 ]

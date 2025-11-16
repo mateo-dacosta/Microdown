@@ -12,14 +12,19 @@ Class {
 
 { #category : 'examples' }
 MicMisusedVocabularyRule class >> sample [
+
 	<sampleInstance>
 	| r |
 	r := MicMisusedVocabularyRule new.
 	r name: 'UseInstead'.
-	r pairs: { 'sub-presenter' -> 'subpresenter' .
-			'sub presenter' -> 'subpresenter' .
-			'meta object' -> 'metaobject'}.
-			
+	r pairs: {
+			('sub-presenter' -> 'subpresenter').
+			('sub presenter' -> 'subpresenter').
+			('meta object' -> 'metaobject').
+			('section' -> 'Section').
+			('figure' -> 'Figure'). 
+			('Pharo Image' -> 'Pharo image')}.
+
 	^ r
 ]
 

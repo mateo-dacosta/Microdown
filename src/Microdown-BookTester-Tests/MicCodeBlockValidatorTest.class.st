@@ -8,9 +8,8 @@ Class {
 { #category : 'utilities' }
 MicCodeBlockValidatorTest >> parseAndTest: docText [
 	| doc bTester |
-	doc := Microdown parse: docText.
 	bTester := MicCodeBlockValidator new.
-	bTester start: doc.
+	 bTester checkProject: docText.
 	^ bTester
 ]
 

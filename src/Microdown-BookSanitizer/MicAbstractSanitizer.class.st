@@ -1,11 +1,11 @@
 Class {
-	#name : 'MicSanitizerAbstractStrategy',
+	#name : 'MicAbstractSanitizer',
 	#superclass : 'Object',
 	#category : 'Microdown-BookSanitizer',
 	#package : 'Microdown-BookSanitizer'
 }
 
 { #category : 'private' }
-MicSanitizerAbstractStrategy >> sanitize: aBook [
+MicAbstractSanitizer >> sanitize: aBook [
 	^ self subclassResponsibility.
 ]

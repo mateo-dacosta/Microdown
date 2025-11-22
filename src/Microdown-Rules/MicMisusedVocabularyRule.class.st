@@ -23,6 +23,8 @@ MicMisusedVocabularyRule class >> sample [
 			('meta object' -> 'metaobject').
 			('section' -> 'Section').
 			('figure' -> 'Figure'). 
+			('back-end' -> 'backend'). 
+			('back end' -> 'backend'). 
 			('Pharo Image' -> 'Pharo image')}.
 
 	^ r

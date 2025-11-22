@@ -1,12 +1,12 @@
 Class {
-	#name : 'MicHeaderCapitalizationStrategy',
-	#superclass : 'MicSanitizerAbstractStrategy',
+	#name : 'MicHeaderCapitalizer',
+	#superclass : 'MicAbstractSanitizer',
 	#category : 'Microdown-BookSanitizer',
 	#package : 'Microdown-BookSanitizer'
 }
 
 { #category : 'private' }
-MicHeaderCapitalizationStrategy >> sanitize: aText [
+MicHeaderCapitalizer >> sanitize: aText [
 
 	| anExceptionList aWordList result stream |
 	anExceptionList := MicHeaderCapitalizationRule new

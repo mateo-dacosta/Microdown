@@ -38,6 +38,16 @@ MicRuleTest >> testMatchingSource [
 ]
 
 { #category : 'tests' }
+MicRuleTest >> testMicParagraphMissingLabelPeriodRuleIsOk [
+
+	| aText applyRule res |
+	aText := '2 Analyse'.
+	applyRule := MicParagraphMissingLabelPeriodRule new.
+	res := applyRule detectIncorrectLabel: aText.
+	self assert: res equals: true
+]
+
+{ #category : 'tests' }
 MicRuleTest >> testSimpleRule [
 
 	| r |

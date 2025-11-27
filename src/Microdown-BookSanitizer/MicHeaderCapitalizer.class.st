@@ -8,7 +8,7 @@ Class {
 { #category : 'private' }
 MicHeaderCapitalizer >> sanitize: aText [
 
-	| anExceptionList aWordList result stream |
+	| anExceptionList aWordList result |
 	anExceptionList := MicHeaderCapitalizationRule new
 		                   defaultTextThatShouldNotBeCapitalized.
 	aWordList := aText findTokens: ' '.
@@ -18,12 +18,7 @@ MicHeaderCapitalizer >> sanitize: aText [
 			          lower := w asLowercase.
 			          (anExceptionList includes: lower)
 				          ifTrue: [ lower ]
-				          ifFalse: [
-				          w capitalized ] ].
+				          ifFalse: [ w capitalized ] ].
 
-	stream := String new writeStream.
-	result
-		do: [ :w | stream nextPutAll: w ]
-		separatedBy: [ stream nextPut: Character space ].
-	^ stream contents
+	^ self constructString: result
 ]

@@ -38,6 +38,40 @@ MicRuleTest >> testMatchingSource [
 ]
 
 { #category : 'tests' }
+MicRuleTest >> testMicHeaderFirstLetterCapitalizeRuleIsFalseWithAWordWithTheFirstLetterCapitalize [
+
+	| word res |
+	word := 'pharo'.
+
+	res := MicHeaderFirstLetterCapitalizeRule new matchingPattern: word.
+
+	self assert: res equals: false
+]
+
+{ #category : 'tests' }
+MicRuleTest >> testMicHeaderFirstLetterCapitalizeRuleIsTrueWithAWordWithTheFirstLetterCapitalize [
+
+	|word res|
+	
+	word := 'Pharo'.
+	
+	res := MicHeaderFirstLetterCapitalizeRule new matchingPattern: word.
+	
+	self assert: res equals: true
+]
+
+{ #category : 'tests' }
+MicRuleTest >> testMicHeaderFirstLetterCapitalizeRuleWithAnEmptyString [
+
+	| word res |
+	word := ''.
+
+	res := MicHeaderFirstLetterCapitalizeRule new matchingPattern: word.
+
+	self assert: res equals: false
+]
+
+{ #category : 'tests' }
 MicRuleTest >> testMicParagraphMissingLabelPeriodRuleIsOk [
 
 	| aText applyRule res |

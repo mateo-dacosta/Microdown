@@ -1,10 +1,6 @@
 Class {
 	#name : 'MicParagraphMissingLabelPeriodRule',
 	#superclass : 'MicRule',
-	#instVars : [
-		'pairs',
-		'matchingPatterns'
-	],
 	#category : 'Microdown-Rules-Others',
 	#package : 'Microdown-Rules',
 	#tag : 'Others'

@@ -10,13 +10,13 @@ MicHeaderFirstLetterCapitalizer >> sanitize: aText [
 
 	| words rule aLocalText stream |
 	aLocalText := aText asLowercase.
-	rule := MicHeaderFirstLetterCapitalizeRule new.
+	rule := MicFirstLetterCapitalizeRule new.
 
 	words := aLocalText findTokens: ' '.
 
 
-	words size > 0 ifTrue: [
+	(rule matchingPattern: (words first)) ifFalse: [
 		words first ifNotEmpty: [ words at: 1 put: words first capitalized ] ].
 
-	^ self constructString: words.
+	^ self constructString: words
 ]

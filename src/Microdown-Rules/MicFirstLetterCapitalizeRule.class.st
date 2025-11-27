@@ -1,5 +1,5 @@
 Class {
-	#name : 'MicHeaderFirstLetterCapitalizeRule',
+	#name : 'MicFirstLetterCapitalizeRule',
 	#superclass : 'MicRule',
 	#category : 'Microdown-Rules-Capitalization',
 	#package : 'Microdown-Rules',
@@ -7,7 +7,7 @@ Class {
 }
 
 { #category : 'as yet unclassified' }
-MicHeaderFirstLetterCapitalizeRule >> matchingPattern: aWord [
+MicFirstLetterCapitalizeRule >> matchingPattern: aWord [
 
 	aWord ifEmpty: [ ^ false ].
 	^ aWord first isUppercase

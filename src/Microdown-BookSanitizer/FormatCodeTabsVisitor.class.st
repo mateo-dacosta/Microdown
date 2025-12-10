@@ -1,12 +1,12 @@
 Class {
-	#name : 'FormatCodeWithCorrectTabsVisitor',
+	#name : 'FormatCodeTabsVisitor',
 	#superclass : 'BookSanitizerVisitor',
 	#category : 'Microdown-BookSanitizer',
 	#package : 'Microdown-BookSanitizer'
 }
 
 { #category : 'visiting' }
-FormatCodeWithCorrectTabsVisitor >> visitCode: aMicCodeBlock [
+FormatCodeTabsVisitor >> visitCode: aMicCodeBlock [
 
 	aMicCodeBlock code: (MicCodeCorrectTabs new sanitize: aMicCodeBlock code)
 ]

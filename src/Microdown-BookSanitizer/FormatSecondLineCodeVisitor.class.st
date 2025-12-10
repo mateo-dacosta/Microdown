@@ -1,12 +1,12 @@
 Class {
-	#name : 'FormatSecondLineOfCodeVisitor',
+	#name : 'FormatSecondLineCodeVisitor',
 	#superclass : 'BookSanitizerVisitor',
 	#category : 'Microdown-BookSanitizer',
 	#package : 'Microdown-BookSanitizer'
 }
 
 { #category : 'visiting' }
-FormatSecondLineOfCodeVisitor >> visitCode: aMicCodeBlock [
+FormatSecondLineCodeVisitor >> visitCode: aMicCodeBlock [
 
 	aMicCodeBlock code: (MicCodeCorrectSecondLine new sanitize: aMicCodeBlock code)
 ]

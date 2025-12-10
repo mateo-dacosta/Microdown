@@ -9,7 +9,7 @@ Class {
 FigureCaptionVisitor >> visitFigure: aFigure [
 
 	| aText aFigureCaption atext2 |
-	aText := aFigure children first text.
+	aText := aFigure text.
 	aFigureCaption := MicFigureCaptionSanitizer new.
 	atext2 := aFigureCaption sanitize: aText.
 	aFigure children first bodyString: atext2

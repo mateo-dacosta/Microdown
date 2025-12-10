@@ -1,12 +1,12 @@
 Class {
-	#name : 'FormatPeriodOfLastLineOfCodeVisitor',
+	#name : 'FormatPeriodCodeVisitor',
 	#superclass : 'BookSanitizerVisitor',
 	#category : 'Microdown-BookSanitizer',
 	#package : 'Microdown-BookSanitizer'
 }
 
 { #category : 'visiting' }
-FormatPeriodOfLastLineOfCodeVisitor >> visitCode: aMicCodeBlock [
+FormatPeriodCodeVisitor >> visitCode: aMicCodeBlock [
 
 	aMicCodeBlock code: (MicCodeEndWithoutPeriod new sanitize: aMicCodeBlock code)
 ]

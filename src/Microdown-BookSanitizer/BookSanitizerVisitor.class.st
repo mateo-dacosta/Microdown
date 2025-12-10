@@ -15,9 +15,21 @@ BookSanitizerVisitor >> addVisitor: aVisitor [
 ]
 
 { #category : 'visiting' }
+BookSanitizerVisitor >> initialize [
+
+	visitors:= OrderedCollection new.
+]
+
+{ #category : 'visiting' }
 BookSanitizerVisitor >> removeVisitor: aVisitor [
 
 	visitors remove: aVisitor .
+]
+
+{ #category : 'visiting' }
+BookSanitizerVisitor >> visitCode: aCodeBlock [
+
+	visitors do: [ :visitor | visitor visitCode: aCodeBlock ]
 ]
 
 { #category : 'visiting' }

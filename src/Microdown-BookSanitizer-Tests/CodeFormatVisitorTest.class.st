@@ -12,7 +12,7 @@ CodeFormatVisitorTest >> testCodeBlockFormatFirstLine [
 	
 	aMicCodeBock := MicCodeBlock new.
 	
-	aMicCodeBock body: 'MyPlayer >> play
+	aMicCodeBock code: 'MyPlayer >> play
 	| pieces |
 	pieces := self king isInCheck
 		          ifTrue: [ OrderedCollection with: self king ]
@@ -28,7 +28,11 @@ CodeFormatVisitorTest >> testCodeBlockFormatFirstLine [
 			game move: piece to: legalMoves atRandom.
 			^ self ] ].'.
 	
-	aCodeFormatVisitor := CodeFormatVisitor new.
+	aCodeFormatVisitor := BookSanitizerVisitor new.
+	aCodeFormatVisitor addVisitor: FormatCodeTabsVisitor new.
+	aCodeFormatVisitor addVisitor: FormatPeriodCodeVisitor new.
+	aCodeFormatVisitor addVisitor: FormatSecondLineCodeVisitor new.
+
 	
 	aCodeFormatVisitor visitCode: aMicCodeBock.
 	
@@ -47,7 +51,7 @@ CodeFormatVisitorTest >> testCodeBlockFormatFirstLine [
 		legalMoves := piece legalTargetSquares.
 		legalMoves ifNotEmpty: [
 			game move: piece to: legalMoves atRandom.
-			^ self ] ].'
+			^ self ] ]'
 	
 	
 	

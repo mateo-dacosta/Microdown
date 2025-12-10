@@ -87,6 +87,11 @@ MicCodeBlock >> code [
 	^ self body
 ]
 
+{ #category : 'accessing' }
+MicCodeBlock >> code: aBody [
+	body:= aBody
+]
+
 { #category : 'handle' }
 MicCodeBlock >> extractFirstLineFrom: aLine [
 	"language=Pharo&label=fig1&caption=La vie est belle"

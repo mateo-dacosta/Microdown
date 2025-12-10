@@ -1,9 +1,8 @@
 Class {
 	#name : 'MicHeaderCapitalizationTest',
 	#superclass : 'TestCase',
-	#category : 'Microdown-Rules-Capitalization',
-	#package : 'Microdown-Rules',
-	#tag : 'Capitalization'
+	#category : 'Microdown-Tests',
+	#package : 'Microdown-Tests'
 }
 
 { #category : 'tests' }
